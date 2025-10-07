@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+    margin-bottom: .75rem;
+    flex-wrap: wrap;
+  }
+  .sel, .btn {
+    padding: .5rem .7rem;
+    border-radius: .5rem;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    cursor: pointer;
+  }
+  .btn[aria-pressed="true"] {
+    background: #e2e8f0;
+  }
+  .spacer {
+    flex: 1;
+  }
+  

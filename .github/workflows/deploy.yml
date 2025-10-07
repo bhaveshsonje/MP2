@@ -29,6 +29,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Add SPA 404 fallback
+        run: cp build/index.html build/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -6,7 +6,18 @@ import DetailPage from "./pages/DetailPage";
 import { ResultsProvider } from "./context/ResultsContext";
 
 
-const BASENAME = process.env.NODE_ENV === "production" ? "/mp2" : "/";
+function computeBasename() {
+  if (process.env.NODE_ENV !== "production") return "/";
+  const pub = process.env.PUBLIC_URL || ""; 
+  try {
+    const u = new URL(pub);
+    return u.pathname.endsWith("/") ? u.pathname.slice(0, -1) : u.pathname || "/";
+  } catch {
+    const p = pub.startsWith("/") ? pub : `/${pub}`;
+    return p.endsWith("/") ? p.slice(0, -1) : p;
+  }
+}
+const BASENAME = computeBasename();
 
 function App() {
   return (

@@ -1,0 +1,5 @@
+Date,User Query (abridged),Assistant Response (summary),Notes
+2025-10-08,Git push failed: 'origin' does not appear to be a git repository.,Explained adding remote and pushing: `git remote add origin <repo>` then `git push -u origin main`.,Setup-only guidance; no project code shared.
+2025-10-08,Deployed to GitHub Pages but site shows a blank/empty page.,Diagnosed homepage/basename mismatch; set exact `homepage` URL and derived Router `basename` from PUBLIC_URL.,Config-only fix; no UI/logic code provided.
+2025-10-08,Still blank after fixes; need reliable Pages routing.,Switched to HashRouter in production to avoid 404/basename issues on GitHub Pages.,Routing mode change only; app behavior unchanged.
+2025-10-08,Need CI to deploy SPA correctly.,Added GH Actions workflow and SPA fallback (`cp build/index.html build/404.html`).,Build/deploy step; no feature code included.
